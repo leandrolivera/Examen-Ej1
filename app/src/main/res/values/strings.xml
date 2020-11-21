@@ -2,6 +2,9 @@
     <string name="app_name">App-Examen-Globalizador</string>
     <string name="deshabilitar_habilitar_boton">Deshabilitar/Habilitar boton "Siguiente":</string>
     <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="calle">Calle</string>
+    <string name="numero">Numero</string>
     <string name="titulo">Bienvenido a la App-Examen-Globalizador</string>
     <string name="siguiente">Siguiente</string>
     <string name="cambiar_titulo">Cambiar Titulo</string>

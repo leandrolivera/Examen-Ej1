@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView titulo = findViewById(R.id.tvTitulo);
-        EditText nombre = findViewById(R.id.etNombre);
+        EditText nombre = findViewById(R.id.etNombre), apellido = findViewById(R.id.etApellido),
+                calle = findViewById(R.id.etCalle), numero = findViewById(R.id.etNumero);
 
         @SuppressLint("UseSwitchCompatOrMaterialCode")
         Switch swBoton = findViewById(R.id.swHabilitar);
@@ -29,16 +30,13 @@ public class MainActivity extends AppCompatActivity {
         swBoton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (swBoton.isChecked()){
-                    btnSiguiente.setEnabled(true);
-                } else{
-                    btnSiguiente.setEnabled(false);
-                }
+                btnSiguiente.setEnabled(swBoton.isChecked());
             }
         });
 
 
         btnTitulo.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
                 if (nombre.getText().toString().isEmpty()){
@@ -55,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (nombre.getText().toString().isEmpty()){
                     Toast.makeText(getApplicationContext(),"Por favor, ingrese su nombre.", Toast.LENGTH_SHORT).show();
+                } else if (apellido.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Por favor, ingrese su apellido.", Toast.LENGTH_SHORT).show();
+                } else if (calle.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Por favor, ingrese el nombre de la calle de su domicilio.", Toast.LENGTH_SHORT).show();
+                } else if (numero.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Por favor, ingrese sel número de calle de su domicilio.", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(getApplicationContext(),"Usted presionó siguiente! Gracias", Toast.LENGTH_SHORT).show();
